@@ -11,22 +11,12 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
+function titleCased() {
   return tutorials.map(tutorial => {
-    return tutorial
-      .split(" ")
-      .map(word => {
-        // Check if the word is a special case
-        if (["OO", "NaN", "API", "JSONP"].includes(word.toUpperCase())) {
-          return word.toUpperCase(); // Return as uppercase
-        }
-        // Convert to title case
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      })
-      .join(" ");
+    return tutorial.split(' ').map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
   });
-};
+}
 
-// Run the function to check the output
 console.log(titleCased());
-
